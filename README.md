@@ -34,7 +34,11 @@ func main() {
   }
   
   // Read gma file
-  addon := gma.NewReader(f)
+  r := gma.NewReader(f)
+  addon, err := r.ReadAddon()
+  if err != nil {
+    // Handle error
+  }
   
   // Access information about addon
   // addon.Name
